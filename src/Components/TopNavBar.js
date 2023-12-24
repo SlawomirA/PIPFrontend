@@ -19,7 +19,7 @@ export default function App() {
     return (
             <MDBNavbar expand='lg' dark bgColor='dark'>
                 <MDBContainer fluid>
-                    <MDBNavbarBrand href='#'>Zadanie 3</MDBNavbarBrand>
+                    <MDBNavbarBrand href='/'>Zadanie 3</MDBNavbarBrand>
                     <MDBNavbarToggler
                         type='button'
                         data-target='#navbarColor02'
@@ -32,13 +32,17 @@ export default function App() {
                     </MDBNavbarToggler>
                     <MDBCollapse open={openNavColorSecond} navbar id='navbarColor02'>
                         <MDBNavbarNav className='me-auto mb-2 mb-lg-0'>
-                            <MDBNavbarItem className='active'>
-                                <MDBNavbarLink>
-                                    Home
-                                </MDBNavbarLink>
+                            <MDBNavbarItem>
+                                <MDBNavbarLink href='/'>Home</MDBNavbarLink>
                             </MDBNavbarItem>
                             <MDBNavbarItem>
                                 <MDBNavbarLink href='/add'>Add points</MDBNavbarLink>
+                            </MDBNavbarItem>
+                            <MDBNavbarItem>
+                                <MDBNavbarLink href='/predict'>Predictions & Training</MDBNavbarLink>
+                            </MDBNavbarItem>
+                            <MDBNavbarItem>
+                                <MDBNavbarLink href='/generate'>Generate data points</MDBNavbarLink>
                             </MDBNavbarItem>
                         </MDBNavbarNav>
                     </MDBCollapse>
