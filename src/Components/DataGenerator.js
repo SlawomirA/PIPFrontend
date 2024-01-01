@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import {URLS_GENERATE, URLS_PREDICT, URLS_TRAIN_MODEL} from '../Utils/Urls';
-import {MDBInput, MDBTable, MDBTableBody, MDBTableHead} from 'mdb-react-ui-kit';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { URLS_GENERATE, URLS_PREDICT, URLS_TRAIN_MODEL } from "../Utils/Urls";
+import { MDBInput, MDBTable, MDBTableBody, MDBTableHead } from "mdb-react-ui-kit";
+import { useNavigate } from "react-router-dom";
 
 const DataGenerator = () => {
     const [xValue, setXValue] = useState(0);
@@ -61,29 +61,58 @@ const DataGenerator = () => {
             });
     };
 
-
     return (
-    <div>
-        <div>
-            <div className='row'>
-                <div className='col-md-12 d-inline-block'>
-                    <div className='card d-inline-block'>
-
-                        <div>
-                            <div>
+        <div className="row">
+            <div className="col-md-12 d-inline-block">
+                <div className="card d-inline-block">
+                    <div>
+                        <div className="row">
+                            <div className="col-md-1">
                                 <label htmlFor="xInput">X:</label>
-                                <MDBInput type="number" id="xInput" value={xValue} onChange={handleXChange} step="any" />
                             </div>
-                            <div>
+                            <div className="col-md-11">
+                                <MDBInput
+                                    type="number"
+                                    id="xInput"
+                                    value={xValue}
+                                    onChange={handleXChange}
+                                    step="any"
+                                />
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-md-1">
                                 <label htmlFor="yInput">Y:</label>
-                                <MDBInput type="number" id="yInput" value={yValue} onChange={handleYChange} step="any" />
                             </div>
-                            <div>
+                            <div className="col-md-11">
+                                <MDBInput
+                                    type="number"
+                                    id="yInput"
+                                    value={yValue}
+                                    onChange={handleYChange}
+                                    step="any"
+                                />
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-md-1">
                                 <label htmlFor="rInput">R:</label>
-                                <MDBInput type="number" id="rInput" value={rValue} onChange={handleRChange} step="any" />
                             </div>
-                            <div>
+                            <div className="col-md-11">
+                                <MDBInput
+                                    type="number"
+                                    id="rInput"
+                                    value={rValue}
+                                    onChange={handleRChange}
+                                    step="any"
+                                />
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-md-2 col-lg-1">
                                 <label htmlFor="amountRange">Amount:</label>
+                            </div>
+                            <div className="col-md-10 col-lg-11">
                                 <input
                                     type="range"
                                     id="amountRange"
@@ -93,10 +122,14 @@ const DataGenerator = () => {
                                     onChange={handleAmountChange}
                                     data-mdb-multi-range-slider-init
                                 />
-                                <span>{amountValue}</span>
+                                <span>&nbsp;&nbsp;{amountValue}</span>
                             </div>
-                            <div>
+                        </div>
+                        <div className="row">
+                            <div className="col-md-2 col-lg-1">
                                 <label htmlFor="categoryRange">Category:</label>
+                            </div>
+                            <div className="col-md-10 col-lg-11">
                                 <input
                                     type="range"
                                     id="categoryRange"
@@ -106,12 +139,24 @@ const DataGenerator = () => {
                                     onChange={handleCategoryChange}
                                     data-mdb-multi-range-slider-init
                                 />
-                                <span>{categoryValue}</span>
+                                <span>&nbsp;&nbsp;{categoryValue}</span>
                             </div>
-                            <button  className="btn btn-success" data-mdb-ripple-init  onClick={handleAddDataClick}>Generate points</button>
-                            {/* Display the newly generated points */}
-                            <div className='d-inline-block'>
+                        </div>
+                        <button
+                            className="btn btn-success right-float-btn"
+                            data-mdb-ripple-init
+                            onClick={handleAddDataClick}
+                        >
+                            Generate points
+                        </button>
+                        {/* Display the newly generated points */}
+                        <div className="row title-row">
+                            <div className="col-md-12">
                                 <h2>Newly Generated Points</h2>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-md-12">
                                 <MDBTable>
                                     <MDBTableHead>
                                         <tr>
@@ -138,7 +183,6 @@ const DataGenerator = () => {
                 </div>
             </div>
         </div>
-    </div>
     );
 };
 
