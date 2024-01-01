@@ -52,7 +52,7 @@ function Home() {
     ];
 
     const rows = data.map((record, index) => ({
-        id: index + 1,
+        id: record.id,
         continuous_feature_1: record.continuous_feature_1.toFixed(6),
         continuous_feature_2: record.continuous_feature_2.toFixed(6),
         category: record.category,
